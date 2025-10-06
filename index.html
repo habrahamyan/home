@@ -4,19 +4,29 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PDF Index</title>
-  <style>
-    body { max-width: 720px; margin: 4rem auto; font: 16px/1.5 system-ui, sans-serif; }
-    h1 { margin-bottom: 1rem; }
-    ul { padding-left: 1.2rem; }
-    li { margin: .35rem 0; }
-  </style>
 </head>
 <body>
   <h1>Documents</h1>
-  <ul>
-    <li><a href="file1.pdf" target="_blank" rel="noopener">file1.pdf</a></li>
-    <li><a href="file2.pdf" target="_blank" rel="noopener">file2.pdf</a></li>
-    <li><a href="file3.pdf" target="_blank" rel="noopener">file3.pdf</a></li>
-  </ul>
+  <ul id="list"></ul>
+
+  <script>
+    const api = 'https://api.github.com/repos/twoloopmaster/publicscripts/contents/';
+    fetch(api)
+      .then(r => r.json())
+      .then(items => items
+        .filter(i => i.name.toLowerCase().endsWith('.pdf'))
+        .forEach(i => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = i.name;
+          a.textContent = i.name;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          li.appendChild(a);
+          document.getElementById('list').appendChild(li);
+        }))
+      .catch(console.error);
+  </script>
 </body>
 </html>
+
