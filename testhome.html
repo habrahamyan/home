@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hrach Abrahamyan – Documents</title>
+  <style>
+    body {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      font: 16px/1.5 system-ui, sans-serif;
+      color: #222;
+    }
+    header {
+      border-bottom: 2px solid #eee;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    p.description {
+      margin: .5rem 0 0 0;
+      color: #555;
+    }
+    h2 {
+      margin-top: 2rem;
+      font-size: 1.3rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin: .3rem 0;
+    }
+    a {
+      text-decoration: none;
+      color: #0066cc;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hrach Abrahamyan</h1>
+    <p class="description">Hi and welcome to my little corner of the internet. I'm a grad student of theoretical physics. On this website I would like to upload some of my pedagogical and academic works of physics, primarily with the aim of improving my skills in teaching and physics. Hopefully I can give my own spin to some of these explanations. Whenever I have some free time, I will write and upload PDFs where I derive or explain various theoretical physics and math topics.</p>
+  </header>
+
+  <h2>Scripts</h2>
+  <ul id="pdf-list">
+    <!-- PDF links will be inserted here -->
+  </ul>
+
+  <script>
+    // Replace USER and REPO with your GitHub username and repo name
+    const api = "https://api.github.com/repos/twoloopmaster/publicscripts/contents/";
+
+    fetch(api)
+      .then(r => r.json())
+      .then(items => {
+        items
+          .filter(i => i.name.toLowerCase().endsWith(".pdf"))
+          .forEach(i => {
+            const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.href = i.name;     // relative path works on GitHub Pages
+            a.textContent = i.name.replace(/[-_]/g, " ");
+            a.target = "_blank";
+            a.rel = "noopener";
+            li.appendChild(a);
+            document.getElementById("pdf-list").appendChild(li);
+          });
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById("pdf-list").innerHTML =
+          "<li>Could not load PDFs. Check repo name in script.</li>";
+      });
+  </script>
+</body>
+</html>
