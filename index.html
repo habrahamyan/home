@@ -79,6 +79,15 @@
 
           desc.textContent = item.description;
 
+          if (item.keywords) {
+          const kw = document.createElement("p");
+          kw.textContent = item.keywords.join(", ");
+          kw.style.margin = "0.2rem 0 0 0";
+          kw.style.fontSize = "0.8rem";
+          kw.style.color = "#777";
+          li.appendChild(kw);
+        }
+
           li.appendChild(a);
           li.appendChild(desc);
 
