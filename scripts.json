@@ -8,7 +8,7 @@
   {
     "file": "Custodial_symmetry.pdf",
     "title": "Custodial symmetry",
-    "description": "Custodial symmetry is one of the concepts within the Standard Model that I personally struggled with, especially given that most pedagogical explanations in the literature are somewhat lacking. This script goes over the concept, carefully explains the group theory aspects and carries out some of the calculations.",
+    "description": "Custodial symmetry is one of the concepts within the Standard Model that I personally struggled with, especially given that most pedagogical treatments in the literature are somewhat lacking. This script goes over the concept, carefully explains the group theory aspects and carries out some of the calculations.",
     "keywords": ["Custodial symmetry", "Standard Model", "Gauge bosons", "Bifundamental representation", "Higgs", "Symmetries of the Standard Model", "Approximate symmetries"]
   }
 ]
