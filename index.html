@@ -73,6 +73,10 @@
           a.rel = "noopener";
 
           const desc = document.createElement("p");
+          desc.style.margin = "0.2rem 0 0 0";   // small top margin only
+          desc.style.fontSize = "0.9rem";       // slightly smaller than title
+          desc.style.color = "#555";            // softer color for contrast
+
           desc.textContent = item.description;
 
           li.appendChild(a);
