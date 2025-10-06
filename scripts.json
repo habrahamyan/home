@@ -2,6 +2,7 @@
   {
     "file": "Example_calculation__dimensional_regularization_with_a_two_loop.pdf",
     "title": "Example calculation: dimensional regularization at two-loop",
-    "description": "In this manuscript I carry out a two-loop calculation in scalar phi^3 that I did as homework at some point. The calculation is a good example of loop calculations in quantum field theory, as well as a nice demonstration of dimensional regularization and integration-by-parts identities (IBPs)."
+    "description": "In this manuscript I carry out a two-loop calculation in scalar phi^3 that I did as homework at some point. The calculation is a good example of loop calculations in quantum field theory, as well as a nice demonstration of dimensional regularization and integration-by-parts identities (IBPs).",
+    "keywords": ["quantum field theory", "scalar phi^3", "two-loop calculation", "Feynman parameters", "integration by parts identities", "IBPs", "Wick rotation", "Massless bubble", "Feynman integrals", "Beta function", "Gamma function"]
   }
 ]
