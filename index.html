@@ -82,13 +82,34 @@
           li.appendChild(a);
           li.appendChild(desc);
 
-          if (item.keywords) {
-          const kw = document.createElement("p");
-          kw.textContent = item.keywords.join(", ");
-          kw.style.margin = "0.2rem 0 0 0";
-          kw.style.fontSize = "0.8rem";
-          kw.style.color = "#777";
-          li.appendChild(kw);
+        // Add keywords if present
+        if (item.keywords) {
+          const kwWrapper = document.createElement("p");
+          kwWrapper.style.margin = "0.3rem 0 0 0";
+          kwWrapper.style.fontSize = "0.85rem";
+          kwWrapper.style.color = "#444";
+
+          // Add label
+          const label = document.createElement("span");
+          label.textContent = "Keywords: ";
+          label.style.fontWeight = "600";
+          kwWrapper.appendChild(label);
+
+          // Add each keyword as a badge
+          item.keywords.forEach((word, i) => {
+            const span = document.createElement("span");
+            span.textContent = word;
+            span.style.display = "inline-block";
+            span.style.background = "#eef";
+            span.style.color = "#225";
+            span.style.padding = "0.1rem 0.4rem";
+            span.style.marginRight = "0.3rem";
+            span.style.borderRadius = "4px";
+            span.style.fontSize = "0.8rem";
+            kwWrapper.appendChild(span);
+          });
+
+          li.appendChild(kwWrapper);
         }
 
           document.getElementById("pdf-list").appendChild(li);
