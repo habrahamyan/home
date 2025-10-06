@@ -79,6 +79,9 @@
 
           desc.textContent = item.description;
 
+          li.appendChild(a);
+          li.appendChild(desc);
+
           if (item.keywords) {
           const kw = document.createElement("p");
           kw.textContent = item.keywords.join(", ");
@@ -87,9 +90,6 @@
           kw.style.color = "#777";
           li.appendChild(kw);
         }
-
-          li.appendChild(a);
-          li.appendChild(desc);
 
           document.getElementById("pdf-list").appendChild(li);
         });
