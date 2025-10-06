@@ -52,32 +52,35 @@
 
   <h2>Scripts</h2>
   <ul id="pdf-list">
-    <!-- PDF links will be inserted here -->
+    
   </ul>
 
   <script>
-    const api = "https://api.github.com/repos/twoloopmaster/publicscripts/contents/";
-
-    fetch(api)
+    fetch("scripts.json")
       .then(r => r.json())
       .then(items => {
-        items
-          .filter(i => i.name.toLowerCase().endsWith(".pdf"))
-          .forEach(i => {
-            const li = document.createElement("li");
-            const a = document.createElement("a");
-            a.href = i.name;     // relative path works on GitHub Pages
-            a.textContent = i.name.replace(/[-_]/g, " ");
-            a.target = "_blank";
-            a.rel = "noopener";
-            li.appendChild(a);
-            document.getElementById("pdf-list").appendChild(li);
-          });
+        items.forEach(item => {
+          const li = document.createElement("li");
+
+          const a = document.createElement("a");
+          a.href = item.file;
+          a.textContent = item.title;
+          a.target = "_blank";
+          a.rel = "noopener";
+
+          const desc = document.createElement("p");
+          desc.textContent = item.description;
+
+          li.appendChild(a);
+          li.appendChild(desc);
+
+          document.getElementById("pdf-list").appendChild(li);
+        });
       })
       .catch(err => {
         console.error(err);
         document.getElementById("pdf-list").innerHTML =
-          "<li>Could not load PDFs. Check repo name in script.</li>";
+          "<li>Could not load list of PDFs.</li>";
       });
   </script>
 </body>
