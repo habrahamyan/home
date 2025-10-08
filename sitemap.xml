@@ -9,7 +9,12 @@
 
   <!-- Scripts -->
   <url>
-    <loc>https://twoloopmaster.github.io/publicscripts/scripts/Example_calculation_dimensional_regularization_with_a_two-loop.pdf</loc>
+    <loc>https://habrahamyan.github.io/home/scripts/Example_calculation__dimensional_regularization_with_a_two_loop.pdf</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://habrahamyan.github.io/home/scripts/Custodial_symmetry.pdf</loc>
     <priority>0.8</priority>
   </url>
 
