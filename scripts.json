@@ -1,12 +1,12 @@
 [
   {
-    "file": "Example_calculation__dimensional_regularization_with_a_two_loop.pdf",
+    "file": "scripts/Example_calculation__dimensional_regularization_with_a_two_loop.pdf",
     "title": "Example calculation: dimensional regularization at two-loop",
     "description": "In this manuscript I carry out a two-loop calculation in scalar phi^3 that I did as homework at some point. The calculation is a good example of loop calculations in quantum field theory, as well as a nice demonstration of dimensional regularization and integration-by-parts identities (IBPs).",
     "keywords": ["Quantum Field Theory", "Scalar phi^3", "Two-loop calculation", "Feynman parameters", "Integration by parts identities", "IBPs", "Wick rotation", "Massless bubble", "Feynman integrals", "Beta function", "Gamma function"]
   },
   {
-    "file": "Custodial_symmetry.pdf",
+    "file": "scripts/Custodial_symmetry.pdf",
     "title": "Custodial symmetry",
     "description": "Custodial symmetry is one of the concepts within the Standard Model that I personally struggled with, especially given that most pedagogical treatments in the literature are somewhat lacking. This script goes over the concept, carefully explains the group theory aspects and carries out some of the calculations.",
     "keywords": ["Custodial symmetry", "Standard Model", "Gauge bosons", "Bifundamental representation", "Higgs", "Symmetries of the Standard Model", "Approximate symmetries"]
